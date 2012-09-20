@@ -41,3 +41,6 @@ time to go back and adjust the ROI mode.
 
 Once you're happy with the position of your ROI and baseline, press 'ENTER'
 to begin analysis.
+
+Videos must be converted to the I420 format prior to processing. See
+http://opencv.willowgarage.com/wiki/VideoCodecs for conversion instructions.
