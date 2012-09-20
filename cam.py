@@ -1,9 +1,8 @@
-import gtk
 import sys
 import os
 import argparse
 
-from path import path
+import gtk
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.mlab import find
@@ -11,13 +10,13 @@ import cv2
 import cv
 
 # states
-SET_BASELINE = 0
-SET_ROI = 1
+SET_ROI = 0
+SET_BASELINE = 1
 
 class DropWindow(object):
     def __init__(self, images, output):
         self.output_file = output
-        self.state = SET_BASELINE
+        self.state = SET_ROI
         self.contact_line = []
         self.baseline = None
         self.roi_anchor = []

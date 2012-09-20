@@ -1,0 +1,43 @@
+Contact Angle Measurement
+=========================
+
+Author: Ryan Fobel (ryan@fobel.net)
+Date: 09/20/2012
+
+This program calculates contact angles for a sesille drop from an image or video
+sequence. To use it, you will need to install Python and the following modules:
+pygtk, numpy, matplotlib, and opencv.
+
+Binaries for opencv are available at: http://www.lfd.uci.edu/~gohlke/pythonlibs
+
+Instructions
+============
+
+usage: cam.py [-h] [-i INPUT] [-o OUTPUT]
+
+Analyze contact angles from a video or image.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i INPUT, --input INPUT
+                        input video or image file to process
+  -o OUTPUT, --output OUTPUT
+                        output csv file
+
+When the program opens, select a region of interest (ROI) by clicking and
+dragging your left mouse button. The region of interest should include the
+contact line on one or both sides of the drop. Contact angles will be
+calculated for any edge within this region that intersects with the baseline.
+
+A 3rd-order polynomial is fit to the edge line and the contact angle is the
+angle between the tangent of this fitted polynomial and baseline at their
+intersection point. Be aware that the height of your ROI can affect the final
+contact angle (you need enough points to describe the shape of the drop but
+too many points may yield a poor fit).
+
+Once you've defined your ROI, press 'b' to switch to 'baseline' mode. Now you
+can click on two points to define the baseline of the drop. Press 'r' at any
+time to go back and adjust the ROI mode.
+
+Once you're happy with the position of your ROI and baseline, press 'ENTER'
+to begin analysis.
